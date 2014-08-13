@@ -28,10 +28,10 @@ openssl pkcs12 -export -out identity.p12 -inkey identity.key -in identity.crt -c
 
 
 echo 6. Copying keys and certs to server folder
-copy server.key ../server/Server.key
-copy server.crt ../server/Server.crt
-copy cacert.crt ../server/CA.crt
-copy identity.p12 ../server/Identity.p12
+copy server.key ..\server\Server.key
+copy server.crt ..\server\Server.crt
+copy cacert.crt ..\server\CA.crt
+copy identity.p12 ..\server\Identity.p12
 
 
 echo  7. Generating keys and certs for plist generation
@@ -43,8 +43,8 @@ echo  8. Getting Apple certificates
 openssl x509 -inform der -in AppleWWDRCA.cer -out intermediate.pem
 openssl x509 -inform der -in AppleIncRootCertificate.cer -out root.pem
 
-cp intermediate.pem ../vendor-signing/com/softhinker/intermediate.pem
-cp root.pem ../vendor-signing/com/softhinker/root.pem
+cp intermediate.pem ..\vendor-signing\com\softhinker\intermediate.pem
+cp root.pem ..\vendor-signing\com\softhinker\root.pem
 
 echo DONE!!
 goto end
