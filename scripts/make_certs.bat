@@ -39,13 +39,6 @@ openssl req -inform pem -outform der -in identity.csr -out customer.der
 copy Identity.p12 vendor.p12
 copy identity.csr customer.csr
 
-echo  8. Getting Apple certificates
-openssl x509 -inform der -in AppleWWDRCA.cer -out intermediate.pem
-openssl x509 -inform der -in AppleIncRootCertificate.cer -out root.pem
-
-cp intermediate.pem ..\vendor-signing\com\softhinker\intermediate.pem
-cp root.pem ..\vendor-signing\com\softhinker\root.pem
-
 echo DONE!!
 goto end
 
