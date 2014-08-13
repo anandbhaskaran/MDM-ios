@@ -36,8 +36,8 @@ copy identity.p12 ..\server\Identity.p12
 
 echo  7. Generating keys and certs for plist generation
 openssl req -inform pem -outform der -in identity.csr -out customer.der
-copy Identity.p12 vendor.p12
-copy identity.csr customer.csr
+copy Identity.p12 ..\vendor-signing\com\softhinker\vendor.p12
+copy identity.csr ..\vendor-signing\com\softhinker\customer.csr
 
 echo DONE!!
 goto end
